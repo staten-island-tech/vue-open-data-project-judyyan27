@@ -5,18 +5,19 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-const route = useRoute()
-const pokemon = ref('')
+
+const MVC = ref('')
 
 async function getPokemon() {
-  let res = await fetch('https://pokeapi.co/api/v2/pokemon/?{route.params.id}')
+  let res = await fetch('https://data.cityofnewyork.us/resource/bm4k-52h4.json')
   let data = await res.json
-  pokemon.value = data.results
+  MVC.value = data.results
+  console.log(data)
 }
 
-onMounted(() => {
+/* onMounted(() => {
   getPokemon()
-})
+}) */
 </script>
 
 <style scoped></style>
