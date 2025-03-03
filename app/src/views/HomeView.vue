@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import ApiDisplay from '@/components/ApiDisplay.vue'
+</script>
 
 <template>
-  <main></main>
+  <ApiDisplay />
 </template>
