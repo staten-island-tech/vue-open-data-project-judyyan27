@@ -1,5 +1,10 @@
 <template>
   <h2>{{ data }}</h2>
+  <ul>
+    <li v-for="(data, index) in cart" :key="index">
+      <span> {{ data.crash_date }} - ${{ data.vehicle_typw }} </span>
+    </li>
+  </ul>
 </template>
 
 <script setup>
@@ -13,6 +18,9 @@ async function getData() {
   let data = await res.json()
   data.value = data.results
   console.log(data)
+  /* data.forEach((item) => {
+    console.log(item.unqique_id)
+  }) */
 }
 
 onMounted(() => {
