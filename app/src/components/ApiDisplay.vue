@@ -1,6 +1,6 @@
 <template>
   <h2 v-for="(item, index) in fetchedData" :key="index">
-    <span> {{ item.crash_date }} - {{ item.vehicle_type }} </span>
+    <span> {{ item.state_registration }} - {{ item.vehicle_type }} </span>
   </h2>
 </template>
 
