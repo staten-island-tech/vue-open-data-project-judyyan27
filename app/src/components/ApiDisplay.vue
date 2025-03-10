@@ -22,12 +22,7 @@ onMounted(() => {
 </script>
 
 <!-- <template>
-  <h2>{{ data }}</h2>
-  <ul>
-    <li v-for="(data, index) in cart" :key="index">
-      <span> {{ data.crash_date }} - ${{ data.vehicle_type }} </span>
-    </li>
-  </ul>
+
 </template>
 
 <script setup>
@@ -46,9 +41,7 @@ async function getData() {
   }) */
 }
 
-onMounted(() => {
-  getData()
-})
+
 </script> -->
 
 <style scoped></style>
