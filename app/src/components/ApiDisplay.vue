@@ -1,6 +1,6 @@
 <template>
   <h2 v-for="(item, index) in fetchedData" :key="index">
-    <span> {{ item.state_registration }} - {{ item.vehicle_type }} </span>
+    <span> {{ item.vehicle_model }} - {{ item.crash_time }} </span>
   </h2>
 </template>
 
@@ -44,4 +44,8 @@ async function getData() {
 
 </script> -->
 
-<style scoped></style>
+<style scoped>
+h2 {
+  font-size: 1rem;
+}
+</style>
