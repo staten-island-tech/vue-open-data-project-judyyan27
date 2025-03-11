@@ -1,6 +1,6 @@
 <template>
   <h2 v-for="(item, index) in fetchedData" :key="index">
-    <span> {{ item.vehicle_model }} - {{ item.crash_time }} </span>
+    <span> {{ item.travel_direction }} - {{ item.crash_time }} </span>
   </h2>
 </template>
 
@@ -15,37 +15,14 @@ async function getData() {
   fetchedData.value = data
   console.log(fetchedData.value)
 }
-
+//as soon as website loads, it runs the dataa
 onMounted(() => {
   getData()
 })
 </script>
 
-<!-- <template>
-
-</template>
-
-<script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-
-const data = ref('')
-
-async function getData() {
-  let res = await fetch('https://data.cityofnewyork.us/resource/bm4k-52h4.json')
-  let data = await res.json()
-  data.value = data.results
-  console.log(data)
-  /* data.forEach((item) => {
-    console.log(item.unqique_id)
-  }) */
-}
-
-
-</script> -->
-
 <style scoped>
 h2 {
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 </style>

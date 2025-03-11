@@ -2,7 +2,8 @@
   <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -16,21 +17,12 @@ import {
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-export default {
-  name: 'BarChart',
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: ['January', 'February', 'March'],
-        datasets: [{ data: [40, 20, 12] }],
-      },
-      chartOptions: {
-        responsive: true,
-      },
-    }
-  },
-}
-</script>
+const chartData = ref({
+  labels: ['January', 'February', 'March'],
+  datasets: [{ data: [40, 20, 12] }],
+})
 
-<style scoped></style>
+const chartOptions = ref({
+  responsive: true,
+})
+</script>
