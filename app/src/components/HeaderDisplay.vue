@@ -9,5 +9,7 @@
 <style scoped>
 h1 {
   size: 2rem;
+  align-items: center;
+  text-align: center;
 }
 </style>

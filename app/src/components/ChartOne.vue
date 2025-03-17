@@ -25,4 +25,17 @@ const chartData = ref({
 const chartOptions = ref({
   responsive: true,
 })
+
+const fetchedData = ref([])
+
+async function getData() {
+  const res = await fetch('https://data.cityofnewyork.us/resource/bm4k-52h4.json')
+  const data = await res.json()
+  fetchedData.value = data
+  console.log(fetchedData.value)
+}
+//get exact data for graph and input it into the graph
+onMounted(() => {
+  getData()
+})
 </script>

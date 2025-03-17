@@ -1,7 +1,8 @@
 <template>
-  <h2 v-for="(item, index) in fetchedData" :key="index">
-    <span> {{ item.travel_direction }} - {{ item.crash_time }} </span>
-  </h2>
+  <div class="card" v-for="(item, index) in fetchedData" :key="index">
+    <h1>Crash Time and Vehicle Damage:</h1>
+    <h2 class="item">{{ item.crash_time }} -- {{ item.vehicle_damage }}</h2>
+  </div>
 </template>
 
 <script setup>
@@ -23,6 +24,19 @@ onMounted(() => {
 
 <style scoped>
 h2 {
-  font-size: 0.5rem;
+  font-size: 2rem;
+}
+.card {
+  border-radius: 1rem;
+  border-width: 1rem;
+  width: 20rem;
+  height: 15rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1rem groove;
+  border-color: rgb(60, 27, 67);
 }
 </style>

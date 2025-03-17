@@ -6,6 +6,6 @@ import ChartOne from '@/components/ChartOne.vue'
 
 <template>
   <HeaderDisplay />
-  <ApiDisplay />
-  <ChartOne />
+  <div class="container"><ApiDisplay /></div>
 </template>
+<strong></strong>
