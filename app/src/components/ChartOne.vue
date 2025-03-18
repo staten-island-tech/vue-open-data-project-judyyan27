@@ -1,9 +1,10 @@
 <template>
-  <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+  <div class="container">
+    <Bar v-if="loaded" :data="chartData" />
+  </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -17,23 +18,27 @@ import {
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-const chartData = ref({
-  labels: ['January', 'February', 'March'],
-  datasets: [{ data: [40, 20, 12] }],
-})
+export default {
+  name: 'BarChart',
+  components: { Bar },
+  data: () => ({
+    loaded: false,
+    chartData: null,
+  }),
+  async mounted() {
+    this.loaded = false
 
-const chartOptions = ref({
-  responsive: true,
-})
+    try {
+      const { vehicle } = await fetch('https://data.cityofnewyork.us/resource/bm4k-52h4.json')
+      this.chartdata = userlist
 
-const fetchedData = ref([])
-
-async function getData() {
-  const res = await fetch('https://data.cityofnewyork.us/resource/bm4k-52h4.json')
-  const data = await res.json()
-  fetchedData.value = data
-  console.log(fetchedData.value)
+      this.loaded = true
+    } catch (e) {
+      console.error(e)
+    }
+  },
 }
+
 //get exact data for graph and input it into the graph
 onMounted(() => {
   getData()

@@ -8,8 +8,9 @@
 
 <style scoped>
 h1 {
-  size: 2rem;
-  align-items: center;
+  font-size: 2rem;
   text-align: center;
+  width: 100%;
+  display: flex;
 }
 </style>

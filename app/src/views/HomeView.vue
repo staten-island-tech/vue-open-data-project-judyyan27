@@ -8,4 +8,18 @@ import ChartOne from '@/components/ChartOne.vue'
   <HeaderDisplay />
   <div class="container"><ApiDisplay /></div>
 </template>
-<strong></strong>
+
+<style scoped>
+.container {
+  padding: 2rem;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100rem;
+  height: 80rem;
+  align-self: flex-start;
+}
+</style>
