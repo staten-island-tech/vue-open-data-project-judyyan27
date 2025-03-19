@@ -38,9 +38,4 @@ export default {
     }
   },
 }
-
-//get exact data for graph and input it into the graph
-onMounted(() => {
-  getData()
-})
 </script>

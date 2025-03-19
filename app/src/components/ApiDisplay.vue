@@ -1,17 +1,36 @@
 <template>
   <div class="card" v-for="(item, index) in fetchedData" :key="index">
+    <h2 class="item">Crash Date: {{ item.crash_date ? item.crash_date : 'N/A' }}</h2>
     <h2 class="item">
-      Crash Date: {{ item.crash_date ? item.crash_date : 'N/A' }}
       Crash Time:
       {{ item.crash_time ? item.crash_time : 'N/A' }}
-      State Registration: {{ item.state_registration ? item.state_registration : 'N/A' }} Vehicle
-      Type: {{ item.vehicle_type ? item.vehicle_type : 'N/A' }} Travel Directions:
+    </h2>
+    <h2 class="item">
+      State Registration: {{ item.state_registration ? item.state_registration : 'N/A' }}
+    </h2>
+    <h2 class="item">Vehicle Type: {{ item.vehicle_type ? item.vehicle_type : 'N/A' }}</h2>
+    <h2 class="item">
+      Travel Directions:
       {{ item.travel_direction ? item.travel_direction : 'N/A' }}
+    </h2>
+    <h2 class="item">
       Vehicle Occupants:
       {{ item.vehicle_occupants ? item.vehicle_occupants : 'N/A' }}
+    </h2>
+    <h2 class="item">
       Driver Gender:
       {{ item.driver_sex ? item.driver_sex : 'N/A' }}
-      Driver License Status:
+    </h2>
+    <h2 class="item">
+      Driver License Status: {{ item.driver_license_status ? item.driver_license_status : 'N/A' }}
+    </h2>
+    <h2 class="item">
+      Public Property Damage:
+      {{ item.public_property_damage ? item.public_property_damage : 'N/A' }}
+    </h2>
+    <h2 class="item">
+      Property Damage Type:
+      {{ item.public_property_damage_type ? item.public_property_damage_type : 'N/A' }}
     </h2>
   </div>
 </template>
@@ -52,13 +71,12 @@ h2 {
 } */
 .card {
   height: fit-content;
-  width: 30rem;
+  width: 35rem;
   background-color: aliceblue;
   margin: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  text-transform: uppercase;
 }
 </style>
