@@ -1,17 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HomeView from './views/HomeView.vue'
-import HeaderDisplay from './components/HeaderDisplay.vue'
+import HeaderDisplay from '@/components/HeaderDisplay.vue'
 </script>
 
 <template>
   <header>
+    <HeaderDisplay />
     <div class="wrapper">
-      <HeaderDisplay></HeaderDisplay>
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Borough</RouterLink>
+        <RouterLink to="/factor">Contributing Factors</RouterLink>
       </nav>
     </div>
   </header>
@@ -19,4 +17,10 @@ import HeaderDisplay from './components/HeaderDisplay.vue'
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+nav {
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+</style>
